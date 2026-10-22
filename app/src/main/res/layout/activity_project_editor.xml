@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+    <TextView
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Add project"
+        style="@style/BuildLog.Title"
+        android:textSize="24sp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:background="@color/background"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginTop="12dp"
+                android:hint="Name" />
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:gravity="top"
+                android:layout_marginTop="12dp"
+                android:hint="description" />
+            <TextView
+                android:id="@+id/categoryLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="category"
+                android:layout_marginTop="16dp" />
+            <EditText
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/field_background"
+                android:padding="8dp"
+                android:hint="Category... "/>
+
+            <TextView
+                android:id="@+id/statusLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="status"
+                style="@style/BuildLog.Body"
+                android:layout_marginTop="16dp" />
+            <EditText
+                android:id="@+id/status"
+                android:hint="Status... (Planning, Wip, Finished)"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/field_background"
+                android:padding="8dp" />
+            <EditText
+                android:id="@+id/nextStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:layout_marginTop="12dp"
+                android:hint="next step" />
+            <EditText
+                android:id="@+id/repository"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="repository url (optional)" />
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loading…"
+                style="@style/BuildLog.Body"
+                android:padding="16dp"
+                android:visibility="gone"
+                android:accessibilityLiveRegion="polite" />
+            <Button
+                android:id="@+id/retry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Retry"
+                android:layout_marginHorizontal="24dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/save"
+                style="@style/BuildLog.PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

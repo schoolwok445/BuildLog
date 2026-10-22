@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Project"
+        app:menu="@menu/project" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Project"
+                style="@style/BuildLog.Title" />
+
+            <TextView
+                android:id="@+id/meta"
+                style="@style/BuildLog.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Status" />
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Short description"
+                style="@style/BuildLog.Body" />
+            <TextView
+                android:id="@+id/nextLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="NEXT STEP"
+                style="@style/BuildLog.Body" />
+            <TextView
+                android:id="@+id/nextStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Add a next step when you edit this project."
+                style="@style/BuildLog.Body" />
+            <TextView
+                android:id="@+id/repositoryUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:linksClickable="true"
+                style="@style/BuildLog.Body" />
+            <TextView
+                android:id="@+id/journalLabel"
+                android:textSize="22sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Journal"
+                style="@style/BuildLog.Title" />
+            <EditText
+                android:id="@+id/journalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:inputType="textCapSentences|textMultiLine"
+                android:hint="Write about your progress, ideas, and next steps."
+                android:padding="12dp"
+                android:background="@drawable/field_background"
+                android:importantForAutofill="no" />
+            <Button
+                android:id="@+id/saveJournal"
+                style="@style/BuildLog.PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save journal" />
+            <TextView
+                android:id="@+id/photosLabel"
+                android:textSize="22sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Images"
+                style="@style/BuildLog.Title" />
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Journal image preview"
+                android:background="@color/surface" />
+            <TextView
+                android:id="@+id/photoStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="No photos saved for this project."
+                style="@style/BuildLog.Body" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/previousPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Previous" />
+                <Button
+                    android:id="@+id/nextPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Next" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/deletePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delete displayed photo" />
+            <Button
+                android:id="@+id/choosePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose or take a photo" />
+            <RadioGroup
+                android:id="@+id/storageGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checkedButton="@id/localGallery">
+                <RadioButton
+                    android:id="@+id/localGallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Local gallery" />
+                <RadioButton
+                    android:id="@+id/base64"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Base64" />
+            </RadioGroup>
+            <Button
+                android:id="@+id/savePhoto"
+                style="@style/BuildLog.PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save photo" />
+            <Button
+                android:id="@+id/clearPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel photo selection" />
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Loading…"
+                style="@style/BuildLog.Body" />
+            <Button
+                android:id="@+id/retry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Retry" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

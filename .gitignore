@@ -1,0 +1,10 @@
+.gradle/
+.gradle-home/
+**/build/
+local.properties
+app/google-services.json
+.idea/
+*.iml
+captures/
+tmp/
+*.hprof
